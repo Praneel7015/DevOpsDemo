@@ -9,7 +9,7 @@ building, and validating code changes.
   
 Q1: What is the "Trigger" in this workflow? (What makes the script start?)
   
-A1: Commiting a change the repository
+A1: A push event to the repository/branch (on: push)
 
 Q2: Where is the computer located that actually runs the echo command?
    
@@ -22,11 +22,13 @@ A2:
     Build Date: 2026-01-23T19:41:17Z
     Worker ID: {75e1c7c9-df8e-440d-9d76-a3d3f80375f0}
     Azure Region: westus3
+    ```
+    (A GitHub-hosted runner in Azure, westus3)
    
 Q3: If you create a new file called test.txt and push it, will this Action run again?
 Why?
 
-A3: Auto Runs at commit
+A3: Yes. Any push that matches the workflow trigger (on: push) runs it.
 
   Checkpoint 2
 Q1: When the test failed, what color icon appeared in GitHub?
@@ -38,7 +40,7 @@ A1: Red
 Q2: Why do we need the actions/checkout@v4 step? What happens to the code if we
 delete that line?
 
-A3: Sync with Latest of Repository and Testing, If we delete, it wont update to latest commit
+A2: It checks out the repo on the runner; without it, the workflow has no code, so tests cannot run.
 
 Q3: In a real job, why is it better for the CI to find this error than a customer?
 
@@ -48,15 +50,15 @@ Checkpoint 3
 
 Q1: Why did we use a "Secret" instead of just typing the API Key into the app.js file?
 
-A1:  It is an Environment Variable which contains sensitive data and not to be shared publicly
+A1: It keeps the API key out of the repo and logs; the value is injected as a secret env var.
 
 Q2: What is the benefit of testing on two different Node.js versions (Matrix)?
 
-A2: Compatibiliity for all users and No dependency Problems
+A2: Compatibility across versions and earlier detection of version-specific issues.
 
 Q3: What is a "Build Artifact" and how would a eployment team use it?
 
-A3:Files produced as a result of build process, used for software development, team can use this because includes documents and executables
+A3: Files produced by a build (e.g., packages, binaries). A deployment team can download and deploy them.
 
 Checkpoint 4
 Make a test fail intentionally and observe the CI failure [x]

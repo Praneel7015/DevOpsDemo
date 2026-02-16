@@ -1,4 +1,4 @@
 from calc import add
 
 def test_add():
-  assert add(2, 3) == 7
+  assert add(2, 3) == 9

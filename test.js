@@ -1,1 +1,1 @@
- console.log("Running Successfully"); 
+console.log("Running Successfully"); 

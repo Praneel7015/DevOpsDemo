@@ -43,3 +43,17 @@ A3: Sync with Latest of Repository and Testing, If we delete, it wont update to 
 Q3: In a real job, why is it better for the CI to find this error than a customer?
 
 A3: Small Errors That cause in Real Development may break code, so better to use tools like actions to do testing and running of code.
+
+Checkpoint 3
+
+Q1: Why did we use a "Secret" instead of just typing the API Key into the app.js file?
+
+A1:  It is an Environment Variable which contains sensitive data and not to be shared publicly
+
+Q2: What is the benefit of testing on two different Node.js versions (Matrix)?
+
+A2: Compatibiliity for all users and No dependency Problems
+
+Q3: What is a "Build Artifact" and how would a Deployment team use it?
+
+A3:Files produced as a result of build process, used for software development, team can use this because includes documents and executables

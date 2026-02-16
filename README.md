@@ -59,11 +59,8 @@ Q3: What is a "Build Artifact" and how would a Deployment team use it?
 A3:Files produced as a result of build process, used for software development, team can use this because includes documents and executables
 
 Checkpoint 4
-- Make a test fail intentionally and observe the CI failure
-    [x]
+Make a test fail intentionally and observe the CI failure [x]
   
-- Add a new function and test to the calculator
-    [x]
+Add a new function and test to the calculator [x]
   
-- Fix the failing test and see CI pass
-    [x]
+Fix the failing test and see CI pass [x]

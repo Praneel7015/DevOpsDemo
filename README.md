@@ -54,7 +54,7 @@ Q2: What is the benefit of testing on two different Node.js versions (Matrix)?
 
 A2: Compatibiliity for all users and No dependency Problems
 
-Q3: What is a "Build Artifact" and how would a Deployment team use it?
+Q3: What is a "Build Artifact" and how would a eployment team use it?
 
 A3:Files produced as a result of build process, used for software development, team can use this because includes documents and executables
 
@@ -64,3 +64,36 @@ Make a test fail intentionally and observe the CI failure [x]
 Add a new function and test to the calculator [x]
   
 Fix the failing test and see CI pass [x]
+
+Checkpoint 5
+
+Q1: Do the jobs run in parallel or sequentially?
+
+A1: Parallel by default. In GitHub Actions, separate jobs in the same workflow run in parallel unless you add dependencies with `needs`.
+
+Q2: What happens if the Python tests pass but JavaScript tests fail?
+
+A2: The workflow is marked as failed because at least one job failed, even if the Python job passed.
+
+
+Q3: How would you make JavaScript tests depend on Python tests passing?
+
+A3: Add `needs: test` to the JavaScript job so it only starts after the Python `test` job succeeds (or rename jobs and reference the Python job name).
+
+Checkpoint 6
+
+- How many total jobs will run?
+
+A1: 15 total jobs.
+- Calculate: Python jobs + Node jobs
+
+A2: Python jobs = 3 OS * 4 Python versions = 12. Node jobs = 3 Node versions = 3. Total = 12 + 3 = 15.
+
+- Observe which combinations might fail
+A3: Python on Windows/macOS can fail if dependencies or path assumptions are Linux-only; specific Python versions could fail if a package lacks wheels. Node 18/20/21 can fail if dependencies require a different Node version.
+
+https://drive.google.com/drive/folders/1oIS0SKJeJqzX6iGqdTH-7cYXKhMZkCtv
+
+Create a file with name_USN.doc
+Upload the All Checkpoint answers(1-6):
+https://forms.gle/yZ3orxrGxaAk77aWA
